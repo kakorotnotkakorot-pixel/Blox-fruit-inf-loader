@@ -1,24 +1,204 @@
 -- ================================================
 -- Studio: ByteBreak Studio
--- Project: Blox Fruits Infinity Hub (Base64 Encrypted Loader)
+-- Project: Blox Fruits Infinity Hub (Light Obfuscated)
 -- ================================================
 
-local b64_chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/'
+local _0x1 = Instance.new
+local _0x2 = Color3.fromRGB
+local _0x3 = UDim2.new
+local _0x4 = UDim.new
+local _0x5 = Enum.Font.SourceSansBold
+local _0x6 = Enum.Font.SourceSans
 
-local function base64_decode(data)
-    data = string.gsub(data, '[^'..b64_chars..'=]', '')
-    return (data:gsub('.', function(x)
-        if (x == '=') then return '' end
-        local r,f='',(b64_chars:find(x)-1)
-        for i=6,1,-1 do r=r..(f%2^i - f%2^(i-1) >= 1 and '1' or '0') end
-        return r
-    end):gsub('%d%d%d%d%d%d%d%d', function(x)
-        local c=0
-        for i=1,8 do c=c+(x:sub(i,i)=='1' and 2^(8-i) or 0) end
-        return string.char(c)
-    end))
+local _GUI = _0x1("ScreenGui")
+_GUI.Name = "\66\121\116\101\66\114\101\97\107\95\66\108\111\120\70\114\117\105\116\115"
+_GUI.Parent = game:GetService("CoreGui")
+_GUI.ResetOnSpawn = false
+
+local _C = {
+    B = _0x2(12, 12, 12),
+    R = _0x2(180, 0, 0),
+    P = _0x2(20, 20, 20),
+    W = _0x2(255, 255, 255),
+    G = _0x2(40, 40, 40),
+    OK = _0x2(0, 180, 0)
+}
+
+local _TBtn = _0x1("TextButton")
+_TBtn.Parent = _GUI
+_TBtn.Position = _0x3(0.02, 0, 0.4, 0)
+_TBtn.Size = _0x3(0, 45, 0, 45)
+_TBtn.BackgroundColor3 = _C.R
+_TBtn.Text = "BBS"
+_TBtn.TextColor3 = _C.W
+_TBtn.Font = _0x5
+_TBtn.TextSize = 16
+_TBtn.Active = true
+_TBtn.Draggable = true
+_TBtn.Visible = false
+
+local _TC = _0x1("UICorner")
+_TC.CornerRadius = _0x4(1, 0)
+_TC.Parent = _TBtn
+
+local _MF = _0x1("Frame")
+_MF.Parent = _GUI
+_MF.BackgroundColor3 = _C.B
+_MF.Position = _0x3(0.3, 0, 0.2, 0)
+_MF.Size = _0x3(0, 500, 0, 320)
+_MF.Active = true
+_MF.Draggable = true
+_MF.Visible = false
+
+local _MC = _0x1("UICorner")
+_MC.CornerRadius = _0x4(0, 6)
+_MC.Parent = _MF
+
+local _TB = _0x1("Frame")
+_TB.Parent = _MF
+_TB.BackgroundColor3 = _C.R
+_TB.Size = _0x3(1, 0, 0, 35)
+
+local _TT = _0x1("TextLabel")
+_TT.Parent = _TB
+_TT.BackgroundTransparency = 1
+_TT.Position = _0x3(0, 10, 0, 0)
+_TT.Size = _0x3(0.9, 0, 1, 0)
+_TT.Text = "BYTEBREAK STUDIO | BLOX FRUITS V1"
+_TT.TextColor3 = _C.W
+_TT.Font = _0x5
+_TT.TextSize = 15
+_TT.TextXAlignment = Enum.TextXAlignment.Left
+
+_TBtn.MouseButton1Click:Connect(function()
+    _MF.Visible = not _MF.Visible
+end)
+
+local _KS = _0x1("Frame")
+_KS.Name = "_0xKGate"
+_KS.Parent = _GUI
+_KS.BackgroundColor3 = _C.B
+_KS.Position = _0x3(0.35, 0, 0.3, 0)
+_KS.Size = _0x3(0, 350, 0, 180)
+_KS.Active = true
+_KS.Draggable = true
+
+local _KC = _0x1("UICorner")
+_KC.CornerRadius = _0x4(0, 8)
+_KC.Parent = _KS
+
+local _KT = _0x1("TextLabel")
+_KT.Parent = _KS
+_KT.Size = _0x3(1, 0, 0, 40)
+_KT.Text = "BYTEBREAK STUDIO | ENTER KEY"
+_KT.TextColor3 = _C.R
+_KT.Font = _0x5
+_KT.TextSize = 16
+_KT.BackgroundTransparency = 1
+
+local _KI = _0x1("TextBox")
+_KI.Parent = _KS
+_KI.PlaceholderText = "Paste key here..."
+_KI.Size = _0x3(0.85, 0, 0, 35)
+_KI.Position = _0x3(0.075, 0, 0.3, 0)
+_KI.BackgroundColor3 = _C.P
+_KI.TextColor3 = _C.W
+_KI.Font = _0x6
+
+local _SB = _0x1("TextButton")
+_SB.Parent = _KS
+_SB.Text = "SUBMIT KEY"
+_SB.Size = _0x3(0.85, 0, 0, 35)
+_SB.Position = _0x3(0.075, 0, 0.6, 0)
+_SB.BackgroundColor3 = _C.R
+_SB.TextColor3 = _C.W
+_SB.Font = _0x5
+
+local _SC = _0x1("UICorner")
+_SC.CornerRadius = _0x4(0, 4)
+_SC.Parent = _SB
+
+local _SBBar = _0x1("Frame")
+_SBBar.Parent = _MF
+_SBBar.BackgroundColor3 = _C.P
+_SBBar.Position = _0x3(0, 5, 0, 40)
+_SBBar.Size = _0x3(0, 110, 0, 275)
+
+local _CT = _0x1("Frame")
+_CT.Parent = _MF
+_CT.BackgroundColor3 = _C.P
+_CT.Position = _0x3(0, 120, 0, 40)
+_CT.Size = _0x3(0, 375, 0, 275)
+
+local _Tbs = {"Farm", "TP", "Visuals", "Misc"}
+local _TF, _TBt = {}, {}
+
+for _i, _tn in ipairs(_Tbs) do
+    local _b = _0x1("TextButton")
+    _b.Parent = _SBBar
+    _b.BackgroundColor3 = (_i == 1 and _C.R or _C.G)
+    _b.Position = _0x3(0.05, 0, 0.03 + (_i-1)*0.15, 0)
+    _b.Size = _0x3(0.9, 0, 0, 32)
+    _b.Text = _tn
+    _b.TextColor3 = _C.W
+    _b.Font = _0x5
+    
+    local _bc = _0x1("UICorner")
+    _bc.CornerRadius = _0x4(0, 4)
+    _bc.Parent = _b
+    
+    local _f = _0x1("ScrollingFrame")
+    _f.Parent = _CT
+    _f.BackgroundTransparency = 1
+    _f.Size = _0x3(1, 0, 1, 0)
+    _f.Visible = (_i == 1)
+    _f.CanvasSize = _0x3(0, 0, 1.5, 0)
+    
+    local _l = _0x1("UIListLayout")
+    _l.Parent = _f
+    _l.Padding = _0x4(0, 8)
+    
+    _TF[_tn] = _f
+    _TBt[_tn] = _b
+    
+    _b.MouseButton1Click:Connect(function()
+        for _, _x in ipairs(_Tbs) do
+            _TF[_x].Visible = false
+            _TBt[_x].BackgroundColor3 = _C.G
+        end
+        _TF[_tn].Visible = true
+        _b.BackgroundColor3 = _C.R
+    end)
 end
 
-local _payload = "bG9jYWwgU2NyZWVuR3VpID0gSW5zdGFuY2UubmV3KCJTY3JlZW5HdWkiKQpTY3JlZW5HdWkuTmFtZSA9ICJCeXRlQnJlYWtfQmxveEZydWl0cyIKU2NyZWVuR3VpLlBhcmVudCA9IGdhbWU6R2V0U2VydmljZSgiQ29yZUd1aSIpClNjcmVlbkd1aS5SZXNldE9uU3Bhd24gPSBmYWxzZQoKbG9jYWwgQkxBQ0sgPSBDb2xvcjMuZnJvbVJHQigxMiwgMTIsIDEyKQpsb2NhbCBEQVJLX1JFRCA9IENvbG9yMy5mcm9tUkdCKDE4MCwgMCwgMCkKbG9jYWwgUEFORUxfQkcgPSBDb2xvcjMuZnJvbVJHQigyMCwgMjAsIDIwKQpsb2NhbCBXSElURSA9IENvbG9yMy5mcm9tUkdCKDI1NSwgMjU1LCAyNTUpCmxvY2FsIEdSQVkgPSBDb2xvcjMuZnJvbVJHQig0MCwgNDAsIDQwKQpsb2NhbCBHUkVFTiA9IENvbG9yMy5mcm9tUkdCKDAsIDE4MCwgMCkKCmxvY2FsIFRvZ2dsZUJ0biA9IEluc3RhbmNlLm5ldygiVGV4dEJ1dHRvbiIpClRvZ2dsZUJ0bi5QYXJlbnQgPSBTY3JlZW5HdWkKVG9nZ2xlQnRuLlBvc2l0aW9uID0gVURpbTIubmV3KDAuMDIsIDAsIDAuNCwgMCkKVG9nZ2xlQnRuLlNpemUgPSBVRGltMi5uZXcoMCwgNDUsIDAsIDQ1KQpUb2dnbGVCdG4uQmFja2dyb3VuZENvbG9yMyA9IERBUktfUkVEClRvZ2dsZUJ0bi5UZXh0ID0gIkJCUyIKVG9nZ2xlQnRuLlRleHRDb2xvcjMgPSBXSElURQpUb2dnbGVCdG4uRm9udCA9IEVudW0uRm9udC5Tb3VyY2VTYW5zQm9sZApUb2dnbGVCdG4uVGV4dFNpemUgPSAxNgpUb2dnbGVCdG4uQWN0aXZlID0gdHJ1ZQpUb2dnbGVCdG4uRHJhZ2dhYmxlID0gdHJ1ZQpUb2dnbGVCdG4uVmlzaWJsZSA9IGZhbHNlCgpsb2NhbCBUb2dnbGVDb3JuZXIgPSBJbnN0YW5jZS5uZXcoIlVJQ29ybmVyIikKVG9nZ2xlQ29ybmVyLkNvcm5lclJhZGl1cyA9IFVEaW0ubmV3KDEsIDApClRvZ2dsZUNvcm5lci5QYXJlbnQgPSBUb2dnbGVCdG4KCmxvY2FsIE1haW5GcmFtZSA9IEluc3RhbmNlLm5ldygiRnJhbWUiKQpNYWluRnJhbWUuUGFyZW50ID0gU2NyZWVuR3VpCk1haW5GcmFtZS5CYWNrZ3JvdW5kQ29sb3IzID0gQkxBQ0sKTWFpbkZyYW1lLlBvc2l0aW9uID0gVURpbTIubmV3KDAuMywgMCwgMC4yLCAwKQpNYWluRnJhbWUuU2l6ZSA9IFVEaW0ubmV3KDAsIDUwMCwgMCwgMzIwKQpNYWluRnJhbWUuQWN0aXZlID0gdHJ1ZQpNYWluRnJhbWUuRHJhZ2dhYmxlID0gdHJ1ZQpNYWluRnJhbWUuVmlzaWJsZSA9IGZhbHNlCgpsb2NhbCBNYWluQ29ybmVyID0gSW5zdGFuY2UubmV3KCJVSUNvcm5lciIpCk1haW5Db3JuZXIuQ29ybmVyUmFkaXVzID0gVURpbS5uZXcoMCwgNikKTWFpbkNvcm5lci5QYXJlbnQgPSBNYWluRnJhbWUKCmxvY2FsIFRvcEJhciA9IEluc3RhbmNlLm5ldygiRnJhbWUiKQpUb3BCYXIuUGFyZW50ID0gTWFpbkZyYW1lClRvcEJhci5CYWNrZ3JvdW5kQ29sb3IzID0gREFSS19SRUQKVG9wQmFyLlNpemUgPSBVRGltMi5uZXcoMSwgMCwgMCwgMzUpCgpsb2NhbCBUaXRsZSA9IEluc3RhbmNlLm5ldygiVGV4dExhYmVsIikKVGl0bGUuUGFyZW50ID0gVG9wQmFyClRpdGxlLkJhY2tncm91bmRUcmFuc3BhcmVuY3kgPSAxClRpdGxlLlBvc2l0aW9uID0gVURpbTIubmV3KDAsIDEwLCAwLCAwKQpUaXRsZS5TaXplID0gVURpbTIubmV3KDAuOSwgMCwgMSwgMCkKVGl0bGUuVGV4dCA9ICJCWVRFQlJFQUsgU1RVESB8IEJMT1ggRlJVSVRTIFYxIgpUaXRsZS5UZXh0Q29sb3IzID0gV0hJVEUKVGl0bGUuRm9udCA9IEVudW0uRm9udC5Tb3VyY2VTYW5zQm9sZApUaXRsZS5UZXh0U2l6ZSA9IDE1ClRpdGxlLlRleHRYQWxpZ25tZW50ID0gRW51bS5UZXh0WEFsaWdubWVudC5MZWZ0CgpUb2dnbGVCdG4uTW91c2VCdXR0b24xQ2xpY2s6Q29ubmVjdChmdW5jdGlvbigpCiAgICBNYWluRnJhbWUuVmlzaWJsZSA9IG5vdCBNYWluRnJhbWUuVmlzaWJsZQplbmQpCgpsb2NhbCBLZXlTY3JlZW4gPSBJbnN0YW5jZS5uZXcoIkZyYW1lIikKS2V5U2NyZWVuLk5hbWUgPSAiS2V5R2F0ZSIKS2V5U2NyZWVuLlBhcmVudCA9IFNjcmVlbkd1aQpLZXlTY3JlZW4uQmFja2dyb3VuZENvbG9yMyA9IEJMQUNLCktleVNjcmVlbi5Qb3NpdGlvbiA9IFVEaW0ubmV3KDAuMzUsIDAsIDAuMywgMCkKS2V5U2NyZWVuLlNpemUgPSBVRGltMi5uZXcoMCwgMzUwLCAwLCAxODApCktleVNjcmVlbi5BY3RpdmUgPSB0cnVlCktleVNjcmVlbi5EcmFnZ2FibGUgPSB0cnVlCgpsb2NhbCBLZXlDb3JuZXIgPSBJbnN0YW5jZS5uZXcoIlVJQ29ybmVyIikKS2V5Q29ybmVyLkNvcm5lclJhZGl1cyA9IFVEaW0ubmV3KDAsIDgpCktleUNvcm5lci5QYXJlbnQgPSBLZXlTY3JlZW4KCmxvY2FsIEtleVRpdGxlID0gSW5zdGFuY2UubmV3KCJUZXh0TGFiZWwiKQpLZXlUaXRsZS5QYXJlbnQgPSBLZXlTY3JlZW4KS2V5VGl0bGUuU2l6ZSA9IFVEaW0ubmV3KDEsIDAsIDAsIDQwKQpLZXlUaXRsZS5UZXh0ID0gIkJZXFRFQlJFQUsgU1RVESB8IEVOVEVSIEtFWSIKS2V5VGl0bGUuVGV4dENvbG9yMyA9IERBUktfUkVECktleVRpdGxlLkZvbnQgPSBFbnVtLkZvbnQuU291cmNlU2Fuc0JvbGQKS2V5VGl0bGUuVGV4dFNpemUgPSAxNgpLZXlUaXRsZS5CYWNrZ3JvdW5kVHJhbnNwYXJlbmN5ID0gMQoKbG9jYWwgS2V5SW5wdXQgPSBJbnN0YW5jZS5uZXcoIlRleHRCb3giKQpLZXlJbnB1dC5QYXJlbnQgPSBLZXlTY3JlZW4KS2V5SW5wdXQuUGxhY2Vob2xkZXJUZXh0ID0gIlBhc3RlIGtleSBoZXJlLi4uIgpLZXlJbnB1dC5TaXplID0gVURpbTIubmV3KDAuODUsIDAsIDAsIDM1KQpLZXlJbnB1dC5Qb3NpdGlvbiA9IFVEaW0ubmV3KDAuMDc1LCAwLCAwLjMsIDApCktleUlucHV0LkJhY2tncm91bmRDb2xvcjMgPSBQQU5FTF9CRwpLZXlJbnB1dC5UZXh0Q29sb3IzID0gV0hJVEUKS2V5SW5wdXQuRm9udCA9IEVudW0uRm9udC5Tb3VyY2VTYW5zCgpsb2NhbCBTdWJtaXRCdG4gPSBJbnN0YW5jZS5uZXcoIlRleHRCdXR0b24iKQpTdWJtaXRCdG4uUGFyZW50ID0gS2V5U2NyZWVuClN1Ym1pdEJ0bi5UZXh0ID0gIlNVQk1JVCBLRVkiClN1Ym1pdEJ0bi5TaXplID0gVURpbTIubmV3KDAuODUsIDAsIDAsIDM1KQpTdWJtaXRCdG4uUG9zaXRpb24gPSBVRGltMi5uZXcoMC4wNzUsIDAsIDAuNiwgMCkKU3VibWl0QnRuLkJhY2tncm91bmRDb2xvcjMgPSBEQVJLX1JFRApTdWJtaXRCdG4uVGV4dENvbG9yMyA9IFdISVRFClN1Ym1pdEJ0bi5Gb250ID0gRW51bS5Gb250LlNvdXJjZVNhbnNCb2xkCgpsb2NhbCBLZXlTdWJtaXRDb3JuZXIgPSBJbnN0YW5jZS5uZXcoIlVJQ29ybmVyIikKS2V5U3VibWl0Q29ybmVyLkNvcm5lclJhZGl1cyA9IFVEaW0ubmV3KDAsIDQpCktleVN1Ym1pdENvcm5lci5QYXJlbnQgPSBTdWJtaXRCdG4KCmxvY2FsIFNpZGViYXIgPSBJbnN0YW5jZS5uZXcoIkZyYW1lIikKU2lkZWJhci5QYXJlbnQgPSBNYWluRnJhbWUKU2lkZWJhci5CYWNrZ3JvdW5kQ29sb3IzID0gUEFORUxfQkcKU2lkZWJhci5Qb3NpdGlvbiA9IFVEaW0ubmV3KDAsIDUsIDAsIDQwKQpTaWRlYmFyLlNpemUgPSBVRGltMi5uZXcoMCwgMTEwLCAwLCAyNzUpCgpsb2NhbCBDb250YWluZXIgPSBJbnN0YW5jZS5uZXcoIkZyYW1lIikKQ29udGFpbmVyLlBhcmVudCA9IE1haW5GcmFtZQpDb250YWluZXIuQmFja2dyb3VuZENvbG9yMyA9IFBBTkVMX0JHCkNvbnRhaW5lci5Qb3NpdGlvbiA9IFVEaW0ubmV3KDAsIDEyMCwgMCwgNDApCkNvbnRhaW5lci5TaXplID0gVURpbTIubmV3KDAsIDM3NSwgMCwgMjc1KQoKbG9jYWwgVGFicyA9IHsiRmFybSIsICJUUCIsICJWaXN1YWxzIiwgIk1pc2MifQpsb2NhbCBUYWJGcmFtZXMgPSB7fQpsb2NhbCBUYWJCdXR0b25zID0ge30KCmZvciBpLCB0YWJOYW1lIGluIGlwYWlycyhUYWJzKSBkbyAKICAgIGxvY2FsIEJ0biA9IEluc3RhbmNlLm5ldygiVGV4dEJ1dHRvbiIpCiAgICBCdG4uUGFyZW50ID0gU2lkZWJhcgogICAgQnRuLkJhY2tncm91bmRDb2xvcjMgPSAoaSA9PSAxIGFuZCBEQVJLX1JFRCBvciBHUkFZKQogICAgQnRuLlBvc2l0aW9uID0gVURpbTIubmV3KDAuMDUsIDAsIDAuMDMgKyAoaS0xKSowLjE1LCAwKQogICAgQnRuLlNpemUgPSBVRGltMi5uZXcoMC45LCAwLCAwLCAzMikKICAgIEJ0bi5UZXh0ID0gdGFiTmFtZQogICAgQnRuLlRleHRDb2xvcjMgPSBXSElURQogICAgQnRuLkZvbnQgPSBFbnVtLkZvbnQuU291cmNlU2Fuc0JvbGQKICAgIAogICAgbG9jYWwgQnRuQ29ybmVyID0gSW5zdGFuY2UubmV3KCJVSUNvcm5lciIpCiAgICBCdG5Db3JuZXIuQ29ybmVyUmFkaXVzID0gVURpbS5uZXcoMCwgNCkKICAgIEJ0bkNvcm5lci5QYXJlbnQgPSBCdG4KICAgIAogICAgbG9jYWwgRnJhbWUgPSBJbnN0YW5jZS5uZXcoIlNjcm9sbGluZ0ZyYW1lIikKICAgIEZyYW1lLlBhcmVudCA9IENvbnRhaW5lcgogICAgRnJhbWUuQmFja2dyb3VuZFRyYW5zcGFyZW5jeSA9IDEKICAgIEZyYW1lLlNpemUgPSBVRGltMi5uZXcoMSwgMCwgMSwgMCkKICAgIEZyYW1lLlZpc2libGUgPSAoaSA9PSAxKQogICAgRnJhbWUuQ2FudmFzU2l6ZSA9IFVEaW0ubmV3KDAsIDAsIDEuNSwgMCkKICAgIAogICAgbG9jYWwgTGF5b3V0ID0gSW5zdGFuY2UubmV3KCJVSUxpc3RMYXlvdXQiKQogICAgTGF5b3V0LlBhcmVudCA9IEZyYW1lCiAgICBMYXlvdXQuUGFkZGluZyA9IFVEaW0ubmV3KDAsIDgpCiAgICAKICAgIFRhYkZyYW1lc1t0YWJOYW1lXSA9IEZyYW1lCiAgICBUYWJCdXR0b25zW3RhYk5hbWVdID0gQnRuCiAgICAKICAgIEJ0bi5Nb3VzZUJ1dHRvbjFDbGljazpDb25uZWN0KGZ1bmN0aW9uKCkKICAgICAgICBmb3IgXywgdE5hbWUgaW4gaXBhaXJzKFRhYnMpIGRvCiAgICAgICAgICAgIFRhYkZyYW1lc1t0TmFtZV0uVmlzaWJsZSA9IGZhbHNlCiAgICAgICAgICAgIFRhYkJ1dHRvbnNbdE5hbWVdLkJhY2tncm91bmRDb2xvcjMgPSBHUkFZCiAgICAgICAgZW5kCiAgICAgICAgVGFiRnJhbWVzW3RhYk5hbWVdLlZpc2libGUgPSB0cnVlCiAgICAgICAgQnRuLkJhY2tncm91bmRDb2xvcjMgPSBEQVJLX1JFRAogICAgZW5kKQplbmQKClN1Ym1pdEJ0bi5Nb3VzZUJ1dHRvbjFDbGljazpDb25uZWN0KGZ1bmN0aW9uKCkKICAgIGxvY2FsIHVzZXJLZXkgPSBLZXlJbnB1dC5UZXh0CiAgICBTdWJtaXRCdG4uVGV4dCA9ICJWRVJJRllJTkcuLi4iCiAgICAKICAgIGxvY2FsIGdpc3RVUkwgPSAiaHR0cHM6Ly9naXN0LmdpdGh1YnVzZXJjb250ZW50LmNvbS9rYWtvcm90bm90a2Frb3JvdC1waXhlbC85MzVhZjgwZDc0NDQ1MWZmOGQzNTc1YjFjNjlkZDc1OS9yYXcvNGQ2M2RiZGE4YzE5MzhlYjA1NzdjZTI1YWI4NzMyYzcxOTY4MzZjMC9rZXlzLmpzb24iCiAgICAKICAgIGxvY2FsIHN1Y2Nlc3MsIHJlc3BvbnNlID0gcGNhbGwoZnVuY3Rpb24oKQogICAgICAgIHJldHVybiBnYW1lOkh0dHBHZXQoZ2lzdFVSTCkKICAgIGVuZCkKICAgIAogICAgaWYgc3VjY2VzcyBhbmQgcmVzcG9uc2UgdGhlbgogICAgICAgIGxvY2FsIGRlY29kZVN1Y2Nlc3MsIGtleXNUYWJsZSA9IHBjYWxsKGZ1bmN0aW9uKCkKICAgICAgICAgICAgcmV0dXJuIGdhbWU6R2V0U2VydmljZSgiSHR0cFNlcnZpY2UiKTpKUk9ORGVjb2RlKHJlc3BvbnNlKQogICAgICAgIGVuZCkKICAgICAgICAKICAgICAgICBpZiBkZWNvZGVTdWNjZXNzIGFuZCBrZXlzVGFibGUgYW5kIGtleXNUYWJsZVt1c2VyS2V5XSB0aGVuCiAgICAgICAgICAgIFN1Ym1pdEJ0bi5UZXh0ID0gIkFDQ0VTUyBHUkFOVEVEISIKICAgICAgICAgICAgU3VibWl0QnRuLkJhY2tncm91bmRDb2xvcjMgPSBHUkVFTgogICAgICAgICAgICB0YXNrLndhaXQoMSkKICAgICAgICAgICAgS2V5U2NyZWVuLlZpc2libGUgPSBmYWxzZQogICAgICAgICAgICBNYWluRnJhbWUuVmlzaWJsZSA9IHRydWUKICAgICAgICAgICAgVG9nZ2xlQnRuLlZpc2libGUgPSB0cnVlCiAgICAgICAgICAgIHJldHVybgogICAgICAgIGVuZCAKICAgIGVuZAogICAgCiAgICBTdWJtaXRCdG4uVGV4dCA9ICJJTlZBTElEIEtFWSEiCiAgICBTdWJtaXRCdG4uQmFja2dyb3VuZENvbG9yMyA9IERBUktfUkVECiAgICB0YXNrLndhaXQoMS41KQogICAgU3VibWl0QnRuLlRleHQgPSAiU1VCTUlUIEtFWSIKZW5kKQ=="
-
-assert(loadstring(base64_decode(_payload)))()
+_SB.MouseButton1Click:Connect(function()
+    local _uk = _KI.Text
+    _SB.Text = "VERIFYING..."
+    
+    local _u = "\104\116\116\112\115\58\47\47\103\105\115\116\46\103\105\116\104\117\98\117\115\101\114\99\111\110\116\101\110\116\46\99\111\109\47\107\97\107\111\114\111\116\110\111\116\107\97\107\111\114\111\116\45\112\105\120\101\108\47\57\51\53\97\102\56\48\100\55\52\52\52\53\49\102\102\56\100\51\53\55\53\98\49\99\54\57\100\100\55\53\57\47\114\97\119\47\52\100\54\51\100\98\100\97\56\99\49\57\51\56\101\98\48\53\55\55\99\101\50\53\97\98\56\55\51\50\99\55\49\57\54\56\51\56\99\48\47\107\101\121\115\46\106\115\111\110"
+    
+    local _s, _r = pcall(function()
+        return game:HttpGet(_u)
+    end)
+    
+    if _s and _r then
+        local _ds, _kt = pcall(function()
+            return game:GetService("HttpService"):JSONDecode(_r)
+        end)
+        
+        if _ds and _kt and _kt[_uk] then
+            _SB.Text = "ACCESS GRANTED!"
+            _SB.BackgroundColor3 = _C.OK
+            task.wait(1)
+            _KS.Visible = false
+            _MF.Visible = true
+            _TBtn.Visible = true
+            return
+        end
+    end
+    
+    _SB.Text = "INVALID KEY!"
+    _SB.BackgroundColor3 = _C.R
+    task.wait(1.5)
+    _SB.Text = "SUBMIT KEY"
+end)
