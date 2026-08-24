@@ -1,6 +1,6 @@
 -- ================================================
 -- Studio: ByteBreak Studio
--- Project: Blox Fruits Infinity Hub (Light Obfuscated)
+-- Project: Blox Fruits Infinity Hub (Updated)
 -- ================================================
 
 local _0x1 = Instance.new
@@ -11,7 +11,7 @@ local _0x5 = Enum.Font.SourceSansBold
 local _0x6 = Enum.Font.SourceSans
 
 local _GUI = _0x1("ScreenGui")
-_GUI.Name = "\66\121\116\101\66\114\101\97\107\95\66\108\111\120\70\114\117\105\116\115"
+_GUI.Name = "ByteBreak_BloxFruits"
 _GUI.Parent = game:GetService("CoreGui")
 _GUI.ResetOnSpawn = false
 
@@ -175,7 +175,7 @@ _SB.MouseButton1Click:Connect(function()
     local _uk = _KI.Text
     _SB.Text = "VERIFYING..."
     
-    local _u = "\104\116\116\112\115\58\47\47\103\105\115\116\46\103\105\116\104\117\98\117\115\101\114\99\111\110\116\101\110\116\46\99\111\109\47\107\97\107\111\114\111\116\110\111\116\107\97\107\111\114\111\116\45\112\105\120\101\108\47\57\51\53\97\102\56\48\100\55\52\52\52\53\49\102\102\56\100\51\53\55\53\98\49\99\54\57\100\100\55\53\57\47\114\97\119\47\52\100\54\51\100\98\100\97\56\99\49\57\51\56\101\98\48\53\55\55\99\101\50\53\97\98\56\55\51\50\99\55\49\57\54\56\51\56\99\48\47\107\101\121\115\46\106\115\111\110"
+    local _u = "https://pastebin.com/raw/vC6ukUeQ"
     
     local _s, _r = pcall(function()
         return game:HttpGet(_u)
